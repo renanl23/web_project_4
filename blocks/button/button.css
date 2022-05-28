@@ -2,3 +2,6 @@
   border: 1px solid #ffffff;
   background-color: transparent;
 }
+.button:hover {
+  filter: invert(0.5);
+}
