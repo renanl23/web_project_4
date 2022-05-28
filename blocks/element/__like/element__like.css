@@ -1,0 +1,6 @@
+.element__like {
+  grid-area: like;
+  width: 21px;
+  height: 19px;
+  margin: auto 16px 35px auto;
+}

@@ -1,0 +1,10 @@
+.element {
+  display: grid;
+  /* grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto 460px auto; */
+  border-radius: 10px;
+  background-color: white;
+  grid-template-areas:
+    "image image"
+    "title like";
+}
