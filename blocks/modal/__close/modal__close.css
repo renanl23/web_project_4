@@ -1,0 +1,9 @@
+.modal__close {
+  position: absolute;
+  left: 100%;
+  bottom: 95%;
+  color: #fefefe;
+  font-size: 56px;
+  font-weight: 400;
+  cursor: pointer;
+}

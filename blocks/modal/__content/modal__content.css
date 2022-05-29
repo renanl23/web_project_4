@@ -1,0 +1,20 @@
+.modal__content {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding-left: 36px;
+  padding-right: 36px;
+  border: none;
+  border-radius: 10px;
+  margin: 195px auto;
+  max-width: 360px;
+}
