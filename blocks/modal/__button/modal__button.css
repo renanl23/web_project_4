@@ -2,6 +2,12 @@
   margin: 21px 0 36px 0;
   padding: 14px;
   border: none;
+  border-radius: 2px;
   color: #ffffff;
   background-color: #000000;
+  cursor: pointer;
+}
+
+.modal__button:hover {
+  opacity: 0.8;
 }
