@@ -5,4 +5,24 @@
   grid-template-columns: repeat(auto-fit, minmax(221px, 3fr));
   column-gap: 17px;
   row-gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+@media screen and (max-width: 900px) {
+  .elements {
+    /* grid-template-columns: repeat(auto-fit, minmax(221px, 1fr)); */
+    max-width: 720px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .elements {
+    margin: 36px 20px 20px 20px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .elements {
+    margin: 36px 20px 20px 20px;
+  }
 }

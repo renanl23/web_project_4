@@ -34,8 +34,8 @@
           <button class="profile__add button"></button>
         </div>
         <!-- Elements -->
-        <div class="elements">
-          <div class="element">
+        <ul class="elements">
+          <li class="element">
             <img
               src="images/element_image1.jpg"
               class="element__image"
@@ -49,9 +49,9 @@
                 class="element__like"
               />
             </div>
-          </div>
+          </li>
 
-          <div class="element">
+          <li class="element">
             <img
               src="images/element_image2.jpg"
               class="element__image"
@@ -65,9 +65,9 @@
                 class="element__like"
               />
             </div>
-          </div>
+          </li>
 
-          <div class="element">
+          <li class="element">
             <img
               src="images/element_image3.jpg"
               class="element__image"
@@ -81,9 +81,9 @@
                 class="element__like"
               />
             </div>
-          </div>
+          </li>
 
-          <div class="element">
+          <li class="element">
             <img
               src="images/element_image4.jpg"
               class="element__image"
@@ -97,9 +97,9 @@
                 class="element__like"
               />
             </div>
-          </div>
+          </li>
 
-          <div class="element">
+          <li class="element">
             <img
               src="images/element_image5.jpg"
               class="element__image"
@@ -113,9 +113,9 @@
                 class="element__like"
               />
             </div>
-          </div>
+          </li>
 
-          <div class="element">
+          <li class="element">
             <img
               src="images/element_image6.jpg"
               class="element__image"
@@ -129,8 +129,8 @@
                 class="element__like"
               />
             </div>
-          </div>
-        </div>
+          </li>
+        </ul>
       </main>
       <!-- Footer -->
       <footer class="footer">
@@ -138,13 +138,29 @@
       </footer>
       <!-- Modal -->
       <div class="modal">
-        <div class="modal__content">
+        <form class="modal__content" name="form__edit-profile" action="#">
           <span class="modal__close">&times;</span>
           <h1 class="modal__title">Editar perfil</h1>
-          <input type="text" name="" id="" class="modal__input-text" />
-          <input type="text" name="" id="" class="modal__input-text" />
-          <button class="modal__button">Salvar</button>
-        </div>
+          <input
+            type="text"
+            name="title"
+            id="title"
+            placeholder="Nome"
+            autocomplete="off"
+            value="Jacques Cousteau"
+            class="modal__input-text form__title"
+          />
+          <input
+            type="text"
+            name="subtitle"
+            id="subtitle"
+            placeholder="Sobre mim"
+            autocomplete="off"
+            value="Explorar"
+            class="modal__input-text form__subtitle"
+          />
+          <button type="submit" class="modal__button">Salvar</button>
+        </form>
       </div>
     </div>
     <script src="./scripts/index.js"></script>

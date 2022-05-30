@@ -7,3 +7,11 @@
   font-weight: 400;
   cursor: pointer;
 }
+
+@media screen and (max-width: 534px) {
+  .modal__close {
+    left: 90%;
+    bottom: 100%;
+    font-size: 42px;
+  }
+}

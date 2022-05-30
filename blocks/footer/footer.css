@@ -4,3 +4,21 @@
   max-width: 880px;
   padding: 68px 0 60px 0;
 }
+
+@media screen and (max-width: 900px) {
+  .footer {
+    max-width: 720px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    margin: 36px 20px 0 20px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .footer {
+    max-width: 320px;
+  }
+}

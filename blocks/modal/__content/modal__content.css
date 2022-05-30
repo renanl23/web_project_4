@@ -18,3 +18,17 @@
   margin: 195px auto;
   max-width: 360px;
 }
+
+@media screen and (max-width: 534px) {
+  .modal__content {
+    /* max-width: 282px; */
+    margin: 50% auto;
+  }
+}
+@media screen and (max-width: 320px) {
+  .modal__content {
+    padding-left: 22px;
+    padding-right: 22px;
+    max-width: 230px;
+  }
+}
