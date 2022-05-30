@@ -22,8 +22,6 @@ const modalOpened = () => modal.classList.toggle("modal_opened");
 profileEditButton.addEventListener("click", modalOpened);
 closeButton.addEventListener("click", modalOpened);
 
-likeButton.addEventListener("click", likeButtonClicked);
-
 form.addEventListener("submit", (e) => {
   e.preventDefault(); // Evita o comportamento padrão do formulário
 
