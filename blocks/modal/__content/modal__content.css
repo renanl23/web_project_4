@@ -22,7 +22,7 @@
 @media screen and (max-width: 534px) {
   .modal__content {
     /* max-width: 282px; */
-    margin: 50% auto;
+    margin: 51% auto;
   }
 }
 @media screen and (max-width: 320px) {

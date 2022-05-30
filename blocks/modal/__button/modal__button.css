@@ -11,3 +11,9 @@
 .modal__button:hover {
   opacity: 0.8;
 }
+
+@media screen and (max-width: 534px) {
+  .modal__button {
+    margin: 21px 0 25px 0;
+  }
+}

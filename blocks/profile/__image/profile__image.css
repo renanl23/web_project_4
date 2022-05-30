@@ -2,10 +2,16 @@
   background-image: url("../../../images/profile__image.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  width: 120px;
+  min-width: 120px;
   height: 120px;
   border-radius: 50%;
   margin: 3.75px 30px 3.75px 0;
+}
+
+@media screen and (max-width: 734px) {
+  .profile__image {
+    margin: 3.75px 30px 3.75px 20px;
+  }
 }
 
 @media screen and (max-width: 534px) {

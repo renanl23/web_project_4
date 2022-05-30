@@ -8,10 +8,14 @@
   cursor: pointer;
 }
 
+.modal__close:hover {
+  filter: invert(0.5);
+}
+
 @media screen and (max-width: 534px) {
   .modal__close {
     left: 90%;
-    bottom: 100%;
+    bottom: 102%;
     font-size: 42px;
   }
 }
