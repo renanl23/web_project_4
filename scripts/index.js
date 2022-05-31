@@ -2,8 +2,8 @@
 const formElement = document.querySelector(".modal__content");
 
 // Entradas
-const titleInput = formElement.querySelector(".form__title");
-const subtitleInput = formElement.querySelector(".form__subtitle");
+const titleInput = formElement.querySelector("#title");
+const subtitleInput = formElement.querySelector("#subtitle");
 
 // Botões de ação
 const profileEditButton = document.querySelector(".profile__edit");

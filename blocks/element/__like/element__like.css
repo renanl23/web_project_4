@@ -5,7 +5,3 @@
 .element__like:hover {
   filter: invert(0.5);
 }
-
-.element__like_clicked {
-  content: url(../../../images/profile__like_click.svg);
-}

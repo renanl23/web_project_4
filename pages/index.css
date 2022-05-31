@@ -33,6 +33,7 @@
 @import url(../blocks/element/__image/element__image.css);
 @import url(../blocks/element/__title/element__title.css);
 @import url(../blocks/element/__like/element__like.css);
+@import url(../blocks/element/__like/_clicked/element__like_clicked.css);
 @import url(../blocks/element/__info/element__info.css);
 
 /* ----------------- footer ----------------- */
@@ -42,6 +43,7 @@
 /* ----------------- modal ----------------- */
 @import url(../blocks/modal/modal.css);
 @import url(../blocks/modal/__content/modal__content.css);
+@import url(../blocks/modal/_opened/modal_opened.css);
 @import url(../blocks/modal/__close/modal__close.css);
 @import url(../blocks/modal/__title/modal__title.css);
 @import url(../blocks/modal/__input-text/modal__input-text.css);

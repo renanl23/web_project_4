@@ -13,3 +13,10 @@
     max-width: 720px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .header {
+    padding: 28px 0 38px 0;
+    row-gap: 32px;
+  }
+}

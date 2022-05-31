@@ -2,13 +2,6 @@
   display: flex;
   position: relative;
   flex-direction: column;
-  font-family: "Inter", Arial, Helvetica, sans-serif;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  text-rendering: optimizeLegibility;
   background-color: #fefefe;
   margin: 15% auto; /* 15% from the top and centered */
   padding-left: 36px;
@@ -21,7 +14,6 @@
 
 @media screen and (max-width: 534px) {
   .modal__content {
-    /* max-width: 282px; */
     margin: 51% auto;
   }
 }
