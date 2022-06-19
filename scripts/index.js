@@ -47,13 +47,14 @@ function renderElement(card) {
 function updateElements(cards) {
   elementsList.innerHTML = "";
   cards.forEach((card) => renderElement(card));
+  renderLikeButtons();
 }
 
 // Botões de ação
 const profileEditButton = document.querySelector(".profile__edit");
+const profileAddLocation = document.querySelector(".profile__add");
 const closeButton = document.querySelector(".modal__close");
-const saveButton = profileEditButton.querySelector(".modal__button");
-const likeButtons = document.querySelectorAll(".element__like");
+const saveButton = document.querySelector(".modal__button");
 
 // Valores
 const titleValue = document.querySelector(".profile__title");
@@ -66,24 +67,65 @@ function modalOpened() {
   return modal.classList.toggle("modal_opened");
 }
 
-// Função para escutar o evento de click no botão de element__like
-likeButtons.forEach((likeButton) => {
-  likeButton.addEventListener("click", function () {
-    likeButton.classList.toggle("element__like_clicked");
-  });
-});
+// Elementos do Modal
+const modalTitle = formElement.querySelector(".modal__title");
 
-profileEditButton.addEventListener("click", modalOpened);
+// Função para renderizar Modal Add Local
+function renderModalAddLocation() {
+  modalTitle.textContent = "Novo Local";
+  titleInput.value = "";
+  subtitleInput.value = "";
+  titleInput.placeholder = "Titulo";
+  subtitleInput.placeholder = "Link de Imagem";
+  saveButton.textContent = "Criar";
+  formElement.setAttribute("name", "form__add-local");
+  modalOpened();
+}
+// Funcão para renderizar Modal Profile Edit
+function renderModalProfileEdit() {
+  modalTitle.textContent = "Editar Perfil";
+  titleInput.value = titleValue.textContent;
+  subtitleInput.value = subtitleValue.textContent;
+  titleInput.placeholder = "Nome";
+  subtitleInput.placeholder = "Sobre mim";
+  saveButton.textContent = "Salvar";
+  formElement.setAttribute("name", "form__edit-profile");
+  modalOpened();
+}
+
+// Função para escutar o evento de click no botão de element__like
+function renderLikeButtons() {
+  const likeButtons = document.querySelectorAll(".element__like");
+  likeButtons.forEach((likeButton) => {
+    likeButton.addEventListener("click", function () {
+      likeButton.classList.toggle("element__like_clicked");
+    });
+  });
+}
+
+profileEditButton.addEventListener("click", renderModalProfileEdit);
+profileAddLocation.addEventListener("click", renderModalAddLocation);
 closeButton.addEventListener("click", modalOpened);
 
-function handleProfileFormSubmit(evt) {
+function handleFormSubmit(evt) {
   evt.preventDefault(); // Evita o comportamento padrão do formulário
-
-  titleValue.textContent = titleInput.value;
-  subtitleValue.textContent = subtitleInput.value;
+  const isProfileEditForm = evt.target.name.includes("form__edit-profile");
+  if (isProfileEditForm) {
+    titleValue.textContent = titleInput.value;
+    subtitleValue.textContent = subtitleInput.value;
+  } else {
+    initialCards.unshift({
+      name: titleInput.value,
+      link: subtitleInput.value,
+    });
+    updateElements(initialCards);
+  }
 
   modalOpened();
 }
 
-formElement.addEventListener("submit", handleProfileFormSubmit);
+// Adicionar o evento de submit ao formulário do Modal
+formElement.addEventListener("submit", handleFormSubmit);
+
+// Obter os cartão iniciar no carregamento da página
 updateElements(initialCards);
