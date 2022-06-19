@@ -48,6 +48,7 @@ function updateElements(cards) {
   elementsList.innerHTML = "";
   cards.forEach((card) => renderElement(card));
   renderLikeButtons();
+  renderTrashButtons();
 }
 
 // Botões de ação
@@ -96,11 +97,30 @@ function renderModalProfileEdit() {
 // Função para escutar o evento de click no botão de element__like
 function renderLikeButtons() {
   const likeButtons = document.querySelectorAll(".element__like");
+  const likedButtonEvent = (evt) =>
+    evt.target.classList.toggle("element__like_clicked");
   likeButtons.forEach((likeButton) => {
-    likeButton.addEventListener("click", function () {
-      likeButton.classList.toggle("element__like_clicked");
-    });
+    likeButton.addEventListener("click", likedButtonEvent);
   });
+}
+// Função para escutar o evento de click no botão de element__trash
+function renderTrashButtons() {
+  const trashButtons = document.querySelectorAll(".element__trash");
+  trashButtons.forEach((trashButton) => {
+    trashButton.addEventListener("click", removeCard);
+  });
+}
+
+function getIndexOfElementEvent(evt) {
+  const elementOf = evt.target.parentElement;
+  const arrayElements = Array.from(elementOf.parentElement.children);
+  return arrayElements.indexOf(elementOf);
+}
+
+function removeCard(evt) {
+  const index = getIndexOfElementEvent(evt);
+  initialCards.splice(index, 1);
+  updateElements(initialCards);
 }
 
 profileEditButton.addEventListener("click", renderModalProfileEdit);
