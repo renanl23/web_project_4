@@ -1,27 +1,27 @@
 const initialCards = [
   {
-    name: "Vale de Yosemite",
-    link: "https://code.s3.yandex.net/web-code/yosemite.jpg",
+    name: "The Creel house",
+    link: "https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQTP72varvV4PboGihUE_jxkUwa8Zj3Bhcqo65aLTBZ2LUJlyFaMT8ZTqT_YRjWN3ua_wP1Vf8MeSApw3d9bcB9rDcVGQCrdWg4Sjld-Bjva-KtzxzRNh2JXUU1f7gFGDAz6hVtop15A1jTKj_l-XXzh0.jpg?r=af0",
   },
   {
-    name: "Lago Louise",
-    link: "https://code.s3.yandex.net/web-code/lake-louise.jpg",
+    name: "The lab",
+    link: "https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQdJ67LVS71LGIvuHeheKoUR3b4TnqUmDRbdFJKJMcS0UJJ6y9pRojMvBkmWAyuCwyrXf-vkBOTa5IviC8FAzDAMMx6DNKzO5BOeiDO1cF1ml1vtvtN5oo9eSKw6OFa8YRyDNhxv0EIZWp7RquP7jWvPU.jpg?r=625",
   },
   {
-    name: "Montanhas Carecas",
-    link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg",
+    name: "Billy’s grave",
+    link: "https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQTvbsCC8rNO7IY8frYdAGzBJCQDSHv69Jc1aXrwJgMjNGvqcbey96b5UQx-eBT1MqTcJtXoWYAsdOdDoKhyBECWb8_rnS3bPDua3FM-UUVlF4AVubSGNUrL7Ngyl33fFhtdm8gaIZtiejtAPPboMlgY8.jpg?r=528",
   },
   {
-    name: "Latemar",
-    link: "https://code.s3.yandex.net/web-code/latemar.jpg",
+    name: "Across the Bearing Sea from Alaska",
+    link: "https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQVyCW5Egj07H01E9vplpl9Me6ZBH_ohhYmPSIOdftKS5fpYYxQK88nYqX2rdF43bZhT3dQ1rSrSaYVTD3QfgNtwgbOkxOLPD2Y9u0fuzWNIwIMrn8du-MSsv1Z0FEDFNTssde6CMqQ9MAifd7Ujfd0lZ.jpg?r=5cb",
   },
   {
-    name: "Parque Nacional da Vanoise ",
-    link: "https://code.s3.yandex.net/web-code/vanoise.jpg",
+    name: "Upside Down",
+    link: "https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQRKm_e0rxNhOOsnADyapTk9q4EBUHGf9MEoBRL0y2G-d-1nDmVQI9uhN_Ozwmoixg_piu6_eWmLyZBJwVhq3Llt6Yo7LJTnVOjO7Kmz67p38DKVX1t36Kd3hPuIBIZP8HZAp74y9CLigpRWrTyLlqLEM.jpg?r=e22",
   },
   {
-    name: "Lago di Braies",
-    link: "https://code.s3.yandex.net/web-code/lago.jpg",
+    name: "Linha 4 - Amarela",
+    link: "https://vademetrosp.files.wordpress.com/2022/06/stranger-things-na-estacao.jpg?w=1920&h=768&crop=1",
   },
 ];
 
