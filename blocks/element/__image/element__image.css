@@ -4,4 +4,5 @@
   object-fit: cover;
   height: 282px;
   background-color: white;
+  cursor: pointer;
 }

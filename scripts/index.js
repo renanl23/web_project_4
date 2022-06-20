@@ -27,6 +27,8 @@ const initialCards = [
 
 // Formulário
 const formElement = document.querySelector(".modal__content");
+// Modal Fig
+const modalFig = document.querySelector(".modal__fig");
 
 // Entradas
 const titleInput = formElement.querySelector("#title");
@@ -49,12 +51,14 @@ function updateElements(cards) {
   cards.forEach((card) => renderElement(card));
   renderLikeButtons();
   renderTrashButtons();
+  renderFigButtons();
 }
 
 // Botões de ação
 const profileEditButton = document.querySelector(".profile__edit");
 const profileAddLocation = document.querySelector(".profile__add");
 const closeButton = document.querySelector(".modal__close");
+const closeFigButton = document.querySelector(".modal__figclose");
 const saveButton = document.querySelector(".modal__button");
 
 // Valores
@@ -63,9 +67,14 @@ const subtitleValue = document.querySelector(".profile__subtitle");
 
 const modal = document.querySelector(".modal");
 
-// Função para abertura e fechamento do modal
-function modalOpened() {
-  return modal.classList.toggle("modal_opened");
+// Função para abertura do modal
+function modalOpened(opened) {
+  modal.classList.toggle("modal_opened");
+  if (opened == "modal__content") {
+    formElement.classList.toggle("modal__content_opened");
+  } else {
+    modalFig.classList.toggle("modal__fig_opened");
+  }
 }
 
 // Elementos do Modal
@@ -80,7 +89,7 @@ function renderModalAddLocation() {
   subtitleInput.placeholder = "Link de Imagem";
   saveButton.textContent = "Criar";
   formElement.setAttribute("name", "form__add-local");
-  modalOpened();
+  modalOpened("modal__content");
 }
 // Funcão para renderizar Modal Profile Edit
 function renderModalProfileEdit() {
@@ -91,9 +100,23 @@ function renderModalProfileEdit() {
   subtitleInput.placeholder = "Sobre mim";
   saveButton.textContent = "Salvar";
   formElement.setAttribute("name", "form__edit-profile");
-  modalOpened();
+  modalOpened("modal__content");
 }
-
+function renderFigButtons() {
+  const openFigButtons = document.querySelectorAll(".element__image");
+  const openedFigButtonEvent = (evt) => {
+    const figureSource = evt.target;
+    const figureRender = document.querySelector(".modal__image");
+    const figureCaption = document.querySelector(".modal__figcaption");
+    figureRender.src = figureSource.src;
+    figureRender.alt = figureSource.alt;
+    figureCaption.textContent = figureSource.alt;
+    modalOpened("modal__fig");
+  };
+  openFigButtons.forEach((figButton) => {
+    figButton.addEventListener("click", openedFigButtonEvent);
+  });
+}
 // Função para escutar o evento de click no botão de element__like
 function renderLikeButtons() {
   const likeButtons = document.querySelectorAll(".element__like");
@@ -125,7 +148,8 @@ function removeCard(evt) {
 
 profileEditButton.addEventListener("click", renderModalProfileEdit);
 profileAddLocation.addEventListener("click", renderModalAddLocation);
-closeButton.addEventListener("click", modalOpened);
+closeButton.addEventListener("click", () => modalOpened("modal__content"));
+closeFigButton.addEventListener("click", () => modalOpened("modal__fig"));
 
 function handleFormSubmit(evt) {
   evt.preventDefault(); // Evita o comportamento padrão do formulário
@@ -140,8 +164,7 @@ function handleFormSubmit(evt) {
     });
     updateElements(initialCards);
   }
-
-  modalOpened();
+  modalOpened("modal__content");
 }
 
 // Adicionar o evento de submit ao formulário do Modal
