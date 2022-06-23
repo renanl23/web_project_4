@@ -67,14 +67,18 @@ const subtitleValue = document.querySelector(".profile__subtitle");
 
 const modal = document.querySelector(".modal");
 
-// Função para abertura do modal
-function handleModal(opened) {
+function handleModal() {
   modal.classList.toggle("modal_opened");
-  if (opened == "modal__content") {
-    formElement.classList.toggle("modal__content_opened");
-  } else {
-    modalFig.classList.toggle("modal__fig_opened");
-  }
+}
+
+function handleModalFig() {
+  handleModal();
+  modalFig.classList.toggle("modal__fig_opened");
+}
+
+function handleModalContent() {
+  handleModal();
+  formElement.classList.toggle("modal__content_opened");
 }
 
 // Elementos do Modal
@@ -94,7 +98,7 @@ function setModalAddLocation() {
 // Função para renderizar Modal Add Local
 function renderModalAddLocation() {
   setModalAddLocation();
-  handleModal("modal__content");
+  handleModalContent();
 }
 // Função para configurar os atributos de Modal Profile Edit
 function setModalProfileEdit() {
@@ -110,7 +114,7 @@ function setModalProfileEdit() {
 // Funcão para renderizar Modal Profile Edit
 function renderModalProfileEdit() {
   setModalProfileEdit();
-  handleModal("modal__content");
+  handleModalContent();
 }
 
 function handleFigButtonEvent(evt) {
@@ -120,7 +124,7 @@ function handleFigButtonEvent(evt) {
   figure.src = figureSource.src;
   figure.alt = figureSource.alt;
   figureCaption.textContent = figureSource.alt;
-  handleModal("modal__fig");
+  handleModalFig();
 }
 
 function setEventFigButtons() {
@@ -163,8 +167,8 @@ function removeCard(evt) {
 
 profileEditButton.addEventListener("click", renderModalProfileEdit);
 profileAddLocation.addEventListener("click", renderModalAddLocation);
-closeButton.addEventListener("click", () => handleModal("modal__content"));
-closeFigButton.addEventListener("click", () => handleModal("modal__fig"));
+closeButton.addEventListener("click", handleModalContent);
+closeFigButton.addEventListener("click", handleModalFig);
 
 function handleFormSubmit(evt) {
   evt.preventDefault(); // Evita o comportamento padrão do formulário
@@ -179,7 +183,7 @@ function handleFormSubmit(evt) {
     });
     updateElements(initialCards);
   }
-  handleModal("modal__content");
+  handleModalContent();
 }
 
 // Adicionar o evento de submit ao formulário do Modal
