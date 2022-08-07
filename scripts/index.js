@@ -79,6 +79,7 @@ function handleModalFig() {
 function handleModalContent() {
   handleModal();
   formElement.classList.toggle("modal__content_opened");
+  enableValidation();
 }
 
 // Elementos do Modal
@@ -93,6 +94,10 @@ function setModalAddLocation() {
   subtitleInput.placeholder = "Link de Imagem";
   saveButton.textContent = "Criar";
   formElement.setAttribute("name", "form__add-local");
+  titleInput.maxLength = 40;
+  subtitleInput.removeAttribute("minlength");
+  subtitleInput.removeAttribute("maxlength");
+  subtitleInput.type = "url";
 }
 
 // Função para renderizar Modal Add Local
@@ -109,6 +114,10 @@ function setModalProfileEdit() {
   subtitleInput.placeholder = "Sobre mim";
   saveButton.textContent = "Salvar";
   formElement.setAttribute("name", "form__edit-profile");
+  titleInput.maxLength = 30;
+  subtitleInput.minLength = 2;
+  subtitleInput.maxLength = 200;
+  subtitleInput.type = "text";
 }
 
 // Funcão para renderizar Modal Profile Edit
@@ -179,12 +188,26 @@ const hideInputError = (formElement, inputElement) => {
   errorElement.textContent = "";
 };
 
+const resetFormInputsError = (formElement) => {
+  const inputElements = formElement.querySelectorAll("input");
+  inputElements.forEach((inputElement) => {
+    hideInputError(formElement, inputElement);
+  });
+};
+
 const checkInputValidity = (formElement, inputElement) => {
   if (!inputElement.validity.valid) {
     showInputError(formElement, inputElement, inputElement.validationMessage);
   } else {
     hideInputError(formElement, inputElement);
   }
+};
+
+const checkFormValidity = (formElement) => {
+  const inputList = Array.from(
+    formElement.querySelectorAll(".modal__input-text")
+  );
+  return !hasInvalidInput(inputList);
 };
 
 const hasInvalidInput = (inputList) => {
@@ -194,7 +217,7 @@ const hasInvalidInput = (inputList) => {
 };
 
 const toggleButtonState = (inputList, buttonElement) => {
-  console.log(hasInvalidInput(inputList));
+  //console.log(hasInvalidInput(inputList));
   if (hasInvalidInput(inputList)) {
     buttonElement.classList.add("modal__button_inactive");
   } else {
@@ -233,11 +256,10 @@ const enableValidation = () => {
 
     fieldsetList.forEach((fieldset) => {
       setEventListeners(fieldset);
+      resetFormInputsError(formElement, fieldset);
     });
   });
 };
-
-enableValidation();
 
 profileEditButton.addEventListener("click", renderModalProfileEdit);
 profileAddLocation.addEventListener("click", renderModalAddLocation);
@@ -246,6 +268,10 @@ closeFigButton.addEventListener("click", handleModalFig);
 
 function handleFormSubmit(evt) {
   evt.preventDefault(); // Evita o comportamento padrão do formulário
+
+  if (!checkFormValidity(evt.currentTarget)) {
+    return;
+  }
   const profileEditForm = evt.target.name.includes("form__edit-profile");
   if (profileEditForm) {
     titleValue.textContent = titleInput.value;
