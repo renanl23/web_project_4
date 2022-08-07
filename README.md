@@ -2,9 +2,13 @@
 
 📝Este é um projeto que mostra os lugares explorados pelo EUA.
 Pode ser visualizado em diversos tamanhos de tela populares (1280px, 768px, 320px).
-Foi desenvolvido para a conclusão da Sprint 4 e 5 do curso de desenvolvedor web da [Practicum](https://practicum.yandex.com/profile/web/).
+Foi desenvolvido para a conclusão da Sprint 4, 5 e 6 do curso de desenvolvedor web da [Practicum](https://practicum.yandex.com/profile/web/).
 
-- Link para o projeto no Figma: [Sprint 4](https://www.figma.com/file/XfB6BSINvliub43JgKza1e/WEB.-Sprint-4.-Around-The-U.S.-desktop-%2B-mobile-pt?node-id=0%3A1) e [Sprint 5](https://www.figma.com/file/HD3sjY52cfmedXVdlxkhZ0/WEB%2C-Sprint-5)
+- Link para o projeto no Figma:
+
+- [Sprint 4](https://www.figma.com/file/XfB6BSINvliub43JgKza1e/WEB.-Sprint-4.-Around-The-U.S.-desktop-%2B-mobile-pt?node-id=0%3A1)
+- [Sprint 5](https://www.figma.com/file/HD3sjY52cfmedXVdlxkhZ0/WEB%2C-Sprint-5)
+- [Sprint 6](https://www.figma.com/file/Pk5nFBSV295thBCWU6jwW5/WEB.Sprint-6%3A-Around-The-U.S.-pt?node-id=0%3A1)
 
 - [Link para o projeto no Github Pages](https://renanl23.github.io/web_project_4/)
 
