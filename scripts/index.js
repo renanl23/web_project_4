@@ -67,6 +67,20 @@ const subtitleValue = document.querySelector(".profile__subtitle");
 
 const modal = document.querySelector(".modal");
 
+function handleOverlayModalClick(evt) {
+  const modalFigClicked = evt.target.classList.contains("modal__fig");
+  const childremElementClicked = evt.currentTarget !== evt.target;
+  if (childremElementClicked && !modalFigClicked) {
+    return;
+  }
+  handleCloseEvent();
+}
+
+function handleCloseEvent() {
+  const modalFigOpened = document.querySelector(".modal__fig_opened");
+  modalFigOpened ? handleModalFig() : handleModalContent();
+}
+
 function handleModal() {
   modal.classList.toggle("modal_opened");
 }
@@ -159,6 +173,16 @@ function setEventTrashButtons() {
   const trashButtons = document.querySelectorAll(".element__trash");
   trashButtons.forEach((trashButton) => {
     trashButton.addEventListener("click", removeCard);
+  });
+}
+
+function setEventKeydown() {
+  document.addEventListener("keydown", function (evt) {
+    if (evt.key === "Escape") {
+      if (modal.classList.contains("modal_opened")) {
+        handleCloseEvent();
+      }
+    }
   });
 }
 
@@ -265,6 +289,7 @@ profileEditButton.addEventListener("click", renderModalProfileEdit);
 profileAddLocation.addEventListener("click", renderModalAddLocation);
 closeButton.addEventListener("click", handleModalContent);
 closeFigButton.addEventListener("click", handleModalFig);
+modal.addEventListener("click", handleOverlayModalClick);
 
 function handleFormSubmit(evt) {
   evt.preventDefault(); // Evita o comportamento padrão do formulário
@@ -291,3 +316,4 @@ formElement.addEventListener("submit", handleFormSubmit);
 
 // Obter os cartão iniciar no carregamento da página
 updateElements(initialCards);
+setEventKeydown();
